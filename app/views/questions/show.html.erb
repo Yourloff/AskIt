@@ -40,7 +40,7 @@
 <h2>Answers</h2>
 
 <% @answers.each do |answer| %>
-  <article class="mb-3">
+  <article class="mb-3" id="answer-<%= answer.id %>">
     <time datetime="<%= answer.formatted_created_at %>">
       <small><%= answer.formatted_created_at %></small>
     </time>
