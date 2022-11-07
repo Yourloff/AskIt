@@ -4,12 +4,12 @@
 <h1 class="mb-4"><%= @question.title %></h1>
 
 <time datetime="<%= @question.formatted_created_at %>">
-  <%= @question.formatted_created_at %>
+  <p class="text-muted"><%= @question.formatted_created_at %></p>
 </time>
 
-<p class="lead my-3">
-  <%= @question.body %>
-</p>
+<div class="lead my-3">
+  <%= sanitize @question.body %>
+</div>
 
 <%= link_to 'Show', question_path(@question), class: 'btn btn-primary' %>
 <%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-secondary' %>
@@ -39,17 +39,9 @@
 
 <h2>Answers</h2>
 
-<% @answers.each do |answer| %>
-  <article class="mb-3" id="answer-<%= answer.id %>">
-    <time datetime="<%= answer.formatted_created_at %>">
-      <small><%= answer.formatted_created_at %></small>
-    </time>
+<%== pagy_bootstrap_nav @pagy %>
 
-    <p>
-      <%= answer.body %>
-    </p>
+<%= render partial: 'answers/answer', collection: @answers,
+           as: :answer, locals: { question: @question } %>
 
-    <%= link_to 'Edit', edit_question_answer_path(@question, answer), class: 'btn btn-secondary btn-sm' %>
-    <%= button_to 'Delete', question_answer_path(@question, answer), class: 'btn btn-danger btn-sm', method: :delete, form: { data: { 'turbo-confirm': 'Are you sure?' } } %>
-  </article>
-<% end %>
+<%== pagy_bootstrap_nav @pagy %>

@@ -3,6 +3,8 @@
 
 <h1 class="mb-4">Questions</h1>
 
+<%== pagy_bootstrap_nav @pagy %>
+
 <%= link_to 'New question', new_question_path, class: 'btn btn-primary btn-lg' %>
 <% @questions.each do |question| %>
   <article class="card mt-3">
@@ -14,9 +16,9 @@
           <small><%= question.formatted_created_at %></small>
         </time>
 
-        <p class="my-2">
-          <%= question.body %>
-        </p>
+        <div class="my-2">
+          <%= truncate strip_tags(question.body), length: 150, omission: '... (continued)' %>
+        </div>
       </section>
 
       <%= link_to 'Show', question_path(question), class: 'btn btn-primary' %>
@@ -25,3 +27,5 @@
     </div>
   </article>
 <% end %>
+
+<%== pagy_bootstrap_nav @pagy %>
