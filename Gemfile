@@ -11,6 +11,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
+gem "sassc-rails"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.2.0'
@@ -26,3 +27,6 @@ group :development do
 end
 
 gem 'pagy', '~> 5.10'
+gem "draper", "~> 4.0"
+
+gem "valid_email2", "~> 4.0"
