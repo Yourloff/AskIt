@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Модель пользователя
 class User < ApplicationRecord
   attr_accessor :old_password, :remember_token
 
@@ -7,8 +10,7 @@ class User < ApplicationRecord
   validate :password_presence
   validate :correct_old_password, on: :update, if: -> { password.present? }
   validates :email, presence: true, uniqueness: true, 'valid_email2/email': true
-  validates :password, confirmation: true, allow_blank: true,
-            length: { minimum: 8, maximum: 70 }
+  validates :password, confirmation: true, allow_blank: true, length: { minimum: 8, maximum: 70 }
   validate :password_complexity
 
   def remember_me
@@ -30,8 +32,12 @@ class User < ApplicationRecord
   private
 
   def digest(string)
-    cost = ActiveModel::SecurePassword.
-      min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    cost = if ActiveModel::SecurePassword
+              .min_cost
+             BCrypt::Engine::MIN_COST
+           else
+             BCrypt::Engine.cost
+           end
     BCrypt::Password.create(string, cost: cost)
   end
 
@@ -49,6 +55,8 @@ class User < ApplicationRecord
     # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
     return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,70}$/
 
-    errors.add :password, 'Complexity requirement not met. Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
+    errors.add :password,
+               'Complexity requirement not met. Length should be 8-70 characters and include: 1 uppercase,'\
+                    '1 lowercase, 1 digit and 1 special character'
   end
 end

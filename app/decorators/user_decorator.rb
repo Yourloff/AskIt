@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Хелпер вью пользователя
 class UserDecorator < ApplicationDecorator
   delegate_all
 

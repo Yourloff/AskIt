@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Хелпер вью вопроса
 class QuestionDecorator < ApplicationDecorator
   delegate_all
 
