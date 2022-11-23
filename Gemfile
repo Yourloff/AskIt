@@ -10,7 +10,7 @@ gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.2.0'
 gem 'importmap-rails'
 gem 'jbuilder'
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 6.0.0'
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 gem 'sassc-rails'
 gem 'sprockets-rails'
@@ -40,3 +40,4 @@ gem 'draper', '~> 4.0'
 gem 'pagy', '~> 5.10'
 
 gem 'valid_email2', '~> 4.0'
+gem 'rails-i18n', '~> 7.0', '>= 7.0.6'
