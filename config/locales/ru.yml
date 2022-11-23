@@ -1,0 +1,29 @@
+ru:
+  en: Английский
+  ru: Русский
+  activerecord:
+    models:
+      question: Вопрос
+    attributes:
+      question:
+        title: Заголовок
+        body: Текст
+  pages:
+    index:
+      title: Добро пожаловать в AskIt!
+  menu:
+    home: Главная
+  questions:
+    destroy:
+      success: Вопрос удален!
+    update:
+      success: Вопрос обновлен!
+    create:
+      success: Вопрос создан!
+  answers:
+    destroy:
+      success: Ответ удален!
+    update:
+      success: Ответ обновлен!
+    create:
+      success: Ответ создан!
