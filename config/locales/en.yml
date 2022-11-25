@@ -8,11 +8,29 @@ en:
       question:
         title: Title
         body: Body
+      answer:
+        body: Body
   pages:
     index:
-      title: Welcome to AskIt!"
+      title: Welcome to AskIt!
+  admin:
+    users:
+      index:
+        title: Admin panel/Users
+        upload: Upload users from XLSX
+        button_submit: Загрузить
+        download: Download zipped XLSX
+        name: Name
+        email: Email
+        created_at: Created at
+        updated_at: Updated at
   menu:
     home: Home
+    questions: Questions
+    edit_profile: Edit profile
+    log_out: Log Out
+    sign_up: Sign Up
+    log_in: Log In
   questions:
     destroy:
       success: Question deleted!
@@ -20,6 +38,31 @@ en:
       success: Question updated!
     create:
       success: Question created!
+    show:
+      title: Write your answer
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      submit_button: Submit answer
+      answers: Answers
+      are_you_sure: Are you sure?
+      currently_at: Questions
+    new:
+      title: New question
+    index:
+      title: Questions
+      new_question: New question
+      continued: continued
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      are_you_sure: Are you sure?
+    form:
+      submit_button: Submit question!
+      placeholder_title: Title
+    edit:
+      title: Edit question
+      currently_at: Questions
   answers:
     destroy:
       success: Answer deleted!
@@ -27,3 +70,24 @@ en:
       success: Answer updated!
     create:
       success: Answer created!
+    answer:
+      edit: Edit
+      delete: Delete
+      are_you_sure: Are you sure?
+    form:
+      submit_button: Submit answer!
+    edit:
+      title: Edit answer
+      page_title: Edit answer
+      currently_at: Questions
+  sessions:
+    create: Incorrent email and/or password
+    destroy: See you later!
+    do_sign_in: Welcome to the AskIt
+  new:
+    title: Log In
+    placeholder_email: Email
+    submit_button: Log In
+  users:
+    create: Welcome to the AskIt
+    update: Your profile was successfully updated!

@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the app, #{current_user.name_or_email}!"
+      flash[:success] = "#{t 'users.create'}, #{current_user.name_or_email}!"
       redirect_to root_path
     else
       render :new
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update user_params
-      flash[:success] = 'Your profile was successfully updated!'
+      flash[:success] = t 'users.update'
       redirect_to edit_user_path(@user)
     else
       render :edit
