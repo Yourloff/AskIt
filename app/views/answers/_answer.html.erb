@@ -1,12 +1,26 @@
-<%= tag.article class: 'mb-3', id: dom_id(answer) do %>
-  <time datetime="<%= answer.formatted_created_at %>">
-    <small class="text-muted"><%= answer.formatted_created_at %></small>
-  </time>
+<%= tag.article class: 'mb-3 card border-0', id: dom_id(answer) do %>
+  <div class="row g-0">
+    <div class="col-sm-auto text-sm-center align-self-center">
+      <%= answer.user.gravatar size: 50, css_class: 'd-block' %>
+      <%= answer.user.name_or_email %>
+    </div>
+    <div class="col-sm">
+      <div class="card-body">
+        <section class="card-text mb-3">
+          <div class="col-sm-9">
+            <time datetime="<%= answer.formatted_created_at %>">
+              <small class="text-muted"><%= answer.formatted_created_at %></small>
+            </time>
 
-  <div class="my-2">
-    <%= sanitize answer.body %>
+            <div class="my-2">
+              <%= sanitize answer.body %>
+            </div>
+          </div>
+        </section>
+
+        <%= link_to t('.edit'), edit_question_answer_path(question, answer), class: 'btn btn-secondary btn-sm' %>
+        <%= button_to t('.delete'), question_answer_path(question, answer), class: 'btn btn-danger btn-sm', method: :delete, form: { data: { 'turbo-confirm': t('.are_you_sure') } } %>
+      </div>
+    </div>
   </div>
-
-  <%= link_to t('.edit'), edit_question_answer_path(question, answer), class: 'btn btn-secondary btn-sm' %>
-  <%= button_to t('.delete'), question_answer_path(question, answer), class: 'btn btn-danger btn-sm', method: :delete, form: { data: { 'turbo-confirm': t('.are_you_sure') } } %>
 <% end %>

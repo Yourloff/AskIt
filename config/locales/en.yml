@@ -52,6 +52,7 @@ en:
     index:
       title: Questions
       new_question: New question
+    question:
       continued: continued
       show: Show
       edit: Edit
@@ -81,9 +82,9 @@ en:
       page_title: Edit answer
       currently_at: Questions
   sessions:
-    create: Incorrent email and/or password
+    warning: Incorrent email and/or password
+    success: 'Welcome %{name}!'
     destroy: See you later!
-    do_sign_in: Welcome to the AskIt
   new:
     title: Log In
     placeholder_email: Email

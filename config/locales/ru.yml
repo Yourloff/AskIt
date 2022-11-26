@@ -52,6 +52,7 @@ ru:
     index:
       title: Вопросы
       new_question: Новый вопрос
+    question:
       continued: продолжение
       show: Показать
       edit: Редактировать
@@ -81,9 +82,9 @@ ru:
       page_title: Редактировать ответ
       currently_at: Вопросы
   sessions:
-    create: Неверный адрес электронной почты и/или пароль
+    warning: Неверный адрес электронной почты и/или пароль
+    success: '%{name}, добро пожаловать!'
     destroy: Увидимся позже!
-    do_sign_in: Добро пожаловать в AskIt
     new:
       title: Войти
       placeholder_email: Электронная почта

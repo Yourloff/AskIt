@@ -13,7 +13,7 @@
           <ul class="nav col-5">
             <li class="dropdown">
               <%= link_to '#', class: 'd-flex nav-link px-2 dropdown-toggle text-white align-items-center',
-                          data: {"bs-toggle": 'dropdown'} do %>
+                          data: { "bs-toggle": 'dropdown' } do %>
                 <%= tag.div '', class: "flag #{I18n.locale}-flag mt-1" %>
                 <%= t I18n.locale %>
               <% end %>
@@ -36,16 +36,21 @@
           <ul class="nav offset-2 col-5">
             <% if user_signed_in? %>
               <li class="dropdown">
-                <%= nav_tab current_user.name_or_email, '#',
-                            class: 'nav-link px-2 dropdown-toggle',
-                            data: { 'bs-toggle': 'dropdown' }, current_page: current_page %>
+                <%= link_to '#',
+                            class: 'nav-link px-2 dropdown-toggle text-white',
+                            data: { 'bs-toggle': 'dropdown' } do %>
+                  <%= current_user.gravatar %>
+                  <%= current_user.name_or_email %>
+                <% end %>
 
                 <ul class="dropdown-menu">
                   <li>
                     <%= link_to t('menu.edit_profile'), edit_user_path(current_user), class: 'dropdown-item' %>
                   </li>
 
-                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
 
                   <li>
                     <%= button_to t('menu.log_out'), session_path, method: :delete, class: 'dropdown-item' %>
