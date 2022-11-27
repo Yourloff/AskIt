@@ -9,6 +9,7 @@ gem 'activerecord-import', '~> 1.4', '>= 1.4.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.2.0'
+gem 'bullet'
 gem 'caxlsx', '~> 3.3'
 gem 'caxlsx_rails', '~> 0.6.3'
 gem 'importmap-rails'

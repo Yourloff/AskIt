@@ -5,6 +5,8 @@ en:
     models:
       question: Question
     attributes:
+      comment:
+        body: текст
       question:
         title: Title
         body: Body
@@ -18,12 +20,22 @@ en:
       index:
         title: Admin panel/Users
         upload: Upload users from XLSX
-        button_submit: Загрузить
+        button_submit: Upload
         download: Download zipped XLSX
         name: Name
         email: Email
         created_at: Created at
         updated_at: Updated at
+  comments:
+    comment:
+      destroy: Destroy
+      are_you_sure: Are you sure?
+    create:
+      success: Comment created!
+    destroy:
+      success: Comment  deleted!
+    commentable:
+      button_submit: Comment
   menu:
     home: Home
     questions: Questions
@@ -47,6 +59,7 @@ en:
       answers: Answers
       are_you_sure: Are you sure?
       currently_at: Questions
+      comments: Comments
     new:
       title: New question
     index:

@@ -5,6 +5,8 @@ ru:
     models:
       question: Вопрос
     attributes:
+      comment:
+        body: Текст
       question:
         title: Заголовок
         body: Текст
@@ -24,6 +26,16 @@ ru:
         email: Эл. почта
         created_at: Зарегистрирован
         updated_at: Обновлено
+  comments:
+    comment:
+      destroy: Удалить
+      are_you_sure: Вы уверены?
+    create:
+      success: Комментарий создан!
+    destroy:
+      success: Комментарий удален!
+    commentable:
+      button_submit: Оставить комментарий
   menu:
     home: Главная
     questions: Вопросы
@@ -47,6 +59,7 @@ ru:
       answers: Ответы
       are_you_sure: Вы уверены?
       currently_at: Вопросы
+      comments: Комментарии
     new:
       title: Новый вопрос
     index:
